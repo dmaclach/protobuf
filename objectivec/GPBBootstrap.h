@@ -132,7 +132,14 @@
 // Current library runtime version.
 // - Gets bumped when the runtime makes changes to the interfaces between the
 //   generated code and runtime (things added/removed, etc).
+#ifdef GOOGLE_PROTOBUF_OBJC_VERSION_30002_COMPAT
+// The space between # and define below is intentional and is a horrible hack
+// that exists to avoid a check that we have to make sure
+// GOOGLE_PROTOBUF_OBJC_VERSION stays in sync.
+# define GOOGLE_PROTOBUF_OBJC_VERSION 30002
+#else
 #define GOOGLE_PROTOBUF_OBJC_VERSION 30003
+#endif
 
 // Minimum runtime version supported for compiling/running against.
 // - Gets changed when support for the older generated code is dropped.
